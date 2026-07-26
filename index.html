@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ============ EDIT: name + title ============ -->
+<title>Your Name | Applied Economist</title>
+<meta name="description" content="PhD student in Applied Economics. Research in [your areas].">
+<meta property="og:title" content="Your Name | Applied Economist">
+<meta property="og:description" content="PhD student in Applied Economics.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fdfcfa;
+    --ink:#22201d;
+    --muted:#6a655d;
+    --line:#e6e1d8;
+    --accent:#7a2e1f;        /* muted brick — swap freely */
+    --display:"Source Serif 4",Georgia,serif;
+    --ui:"Inter",system-ui,sans-serif;
+    --maxw:720px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--display);font-size:18px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  a{color:var(--accent);text-underline-offset:2px}
+ 
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:20;
+    background:rgba(253,252,250,.9);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;
+    padding-top:15px;padding-bottom:15px}
+  nav .name{font-family:var(--display);font-weight:600;font-size:16px;text-decoration:none;color:var(--ink)}
+  nav .links{display:flex;gap:22px}
+  nav .links a{font-family:var(--ui);font-size:13.5px;text-decoration:none;color:var(--muted);transition:color .2s}
+  nav .links a:hover{color:var(--accent)}
+ 
+  /* ---------- header ---------- */
+  header{padding:64px 0 40px}
+  .id{display:flex;gap:34px;align-items:flex-start}
+  .id img{
+    width:132px;height:132px;object-fit:cover;border-radius:3px;
+    border:1px solid var(--line);flex-shrink:0;
+  }
+  h1{font-family:var(--display);font-weight:600;font-size:2.3rem;
+    letter-spacing:-.015em;line-height:1.1;margin-bottom:6px}
+  .role{font-family:var(--ui);font-size:15px;color:var(--muted);margin-bottom:16px}
+  .actions{display:flex;flex-wrap:wrap;gap:8px 16px}
+  .actions a{font-family:var(--ui);font-size:13.5px;text-decoration:none;color:var(--accent)}
+  .actions a:hover{text-decoration:underline}
+ 
+  /* ---------- sections ---------- */
+  section{padding:38px 0;border-top:1px solid var(--line)}
+  h2{font-family:var(--ui);font-size:13px;font-weight:600;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+  p{margin-bottom:16px}
+  section > p:last-child{margin-bottom:0}
+ 
+  /* ---------- research ---------- */
+  .paper{padding:24px 0;border-bottom:1px solid var(--line)}
+  .paper:last-child{border-bottom:none;padding-bottom:0}
+  .paper h3{font-family:var(--display);font-weight:600;font-size:1.18rem;
+    line-height:1.32;margin-bottom:7px}
+  .meta{font-family:var(--ui);font-size:14px;color:var(--muted);margin-bottom:4px}
+  .status{font-family:var(--ui);font-size:12px;font-weight:500;
+    display:inline-block;background:#f1ebe2;color:var(--muted);
+    padding:2px 9px;border-radius:2px;margin-left:2px}
+  .paper .pdf{font-family:var(--ui);font-size:13px}
+  details{margin-top:10px}
+  summary{font-family:var(--ui);font-size:13px;color:var(--accent);
+    cursor:pointer;list-style:none;user-select:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"▸ ";font-size:11px}
+  details[open] summary::before{content:"▾ "}
+  .abstract{font-size:.96rem;color:#3a372f;margin-top:10px;
+    padding-left:14px;border-left:2px solid var(--line)}
+ 
+  /* ---------- teaching ---------- */
+  .course{padding:18px 0;border-bottom:1px solid var(--line)}
+  .course:last-child{border-bottom:none;padding-bottom:0}
+  .course h3{font-family:var(--display);font-weight:600;font-size:1.05rem;margin-bottom:3px}
+  .course .inst{font-family:var(--ui);font-size:13.5px;color:var(--muted);margin-bottom:8px}
+  .course ul{list-style:none;font-family:var(--ui);font-size:13.5px;color:#3a372f}
+  .course li{padding:1px 0}
+  .course li::before{content:"— ";color:var(--muted)}
+ 
+  /* ---------- contact ---------- */
+  .contact-block{font-size:.98rem;color:#3a372f}
+ 
+  footer{padding:36px 0;border-top:1px solid var(--line);
+    font-family:var(--ui);font-size:12.5px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+ 
+  @media (max-width:560px){
+    .id{flex-direction:column;gap:20px}
+    .id img{width:104px;height:104px}
+    h1{font-size:1.9rem}
+    nav .links{gap:15px}
+    nav .name{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+ 
+<nav id="top">
+  <div class="wrap">
+    <a href="#top" class="name">Your Name</a>
+    <div class="links">
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+ 
+<header>
+  <div class="wrap">
+    <div class="id">
+      <!-- EDIT: put your photo at assets/img/headshot.jpg -->
+      <img src="assets/img/headshot.jpg" alt="Your Name">
+      <div>
+        <h1>Your Name</h1>
+        <!-- EDIT -->
+        <div class="role">Ph.D. Student, Applied Economics · Your University</div>
+        <div class="actions">
+          <a href="assets/cv/CV.pdf">📄 Curriculum Vitae</a>
+          <a href="mailto:you@university.edu">✉ you@university.edu</a>
+          <a href="https://orcid.org/0000-0000-0000-0000">🆔 ORCID</a>
+          <a href="https://www.linkedin.com/in/yourprofile/">in LinkedIn</a>
+          <a href="https://x.com/yourhandle">𝕏 @yourhandle</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+ 
+<div class="wrap">
+ 
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <h2>About</h2>
+    <!-- EDIT -->
+    <p>I am a [year] Ph.D. student in Applied Economics at [University]. My research focuses on [core question — e.g., how policy shapes household welfare in developing economies]. I am also interested in [secondary areas].</p>
+    <p>My interest in these questions is shaped by [background — master's training, fieldwork, prior work]. Before my PhD, I [prior education / experience].</p>
+    <p>Beyond research, I care about teaching and [anything else worth a human touch].</p>
+  </section>
+ 
+  <!-- ============ RESEARCH ============ -->
+  <section id="research">
+    <h2>Research</h2>
+ 
+    <!-- EDIT: copy a .paper block for each paper. Delete PDF/details lines you don't need. -->
+    <div class="paper">
+      <h3>Title of Your First Working Paper Goes Here</h3>
+      <div class="meta">with Coauthor Name · <span class="status">Working paper</span></div>
+      <a class="pdf" href="assets/papers/paper1.pdf">PDF</a>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Paste your abstract here. Keep it as-is from the paper. This section expands and collapses so the page stays scannable while the full text is one click away.</p>
+      </details>
+    </div>
+ 
+    <div class="paper">
+      <h3>Title of Your Second Paper</h3>
+      <div class="meta">with A. Coauthor &amp; B. Coauthor · <span class="status">Under review</span></div>
+      <a class="pdf" href="https://papers.ssrn.com/">SSRN</a>
+      <details>
+        <summary>Abstract</summary>
+        <p class="abstract">Second abstract here.</p>
+      </details>
+    </div>
+ 
+    <div class="paper">
+      <h3>Title of a Work in Progress</h3>
+      <div class="meta">Work in progress</div>
+    </div>
+  </section>
+ 
+  <!-- ============ TEACHING ============ -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+ 
+    <!-- EDIT -->
+    <div class="course">
+      <h3>Lead Instructor — Course Name (COURSE 0000)</h3>
+      <div class="inst">Department, University</div>
+      <ul>
+        <li>Spring 2026 · Undergraduate · N students</li>
+        <li>Responsibilities: course design, lectures, exams</li>
+        <li>Evaluation: 4.8/5.0 overall</li>
+      </ul>
+    </div>
+ 
+    <div class="course">
+      <h3>Teaching Assistant — Course Name (COURSE 0000)</h3>
+      <div class="inst">Department, University</div>
+      <ul>
+        <li>Fall 2025 · Led weekly recitations for N students</li>
+      </ul>
+    </div>
+  </section>
+ 
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-block">
+      <!-- EDIT -->
+      <p>Department of Economics<br>
+      Building &amp; Office, University, City, State<br>
+      <a href="mailto:you@university.edu">you@university.edu</a></p>
+    </div>
+  </section>
+ 
+</div>
+ 
+<footer>
+  <div class="wrap">
+    <span>Your Name</span>
+    <span>Last updated July 2026 · © 2026</span>
+  </div>
+</footer>
+ 
+</body>
+</html>
+ 
